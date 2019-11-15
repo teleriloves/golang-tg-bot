@@ -2,6 +2,7 @@ package main
 
 import (
     "os"
+    "log"
     tb "gopkg.in/tucnak/telebot.v2"
 )
 
@@ -29,11 +30,6 @@ func main() {
 
     b.Handle("/hello", func(m *tb.Message) {
         b.Send(m.Sender, "Hi!")
-    })
-
-    b.Handle("/auth", func(m *tb.Message) {
-        Auth()
-        b.Send(m.Sender, "Authentificating...")
     })
 
     b.Handle("/hello", func(m *tb.Message) {
